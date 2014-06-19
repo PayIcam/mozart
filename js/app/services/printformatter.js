@@ -92,7 +92,7 @@ mozartApp.factory('PrintFormatter', ['DataService', function(DataService){
       txt += PRINTER.printMode(0, false, false, false, false);
     	txt += PRINTER.repeat(PRINTER.codes.lineFeed, 2);
   
-      txt += "Nouveau solde payutc : " + PRINTER.formatPrix(infos.solde/100);
+      txt += "Nouveau solde PayIcam : " + PRINTER.formatPrix(infos.solde/100);
     	txt += PRINTER.codes.lineFeed;
 
     	txt += PRINTER.center("---", PRINTER.nbCols)

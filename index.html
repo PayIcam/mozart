@@ -2,10 +2,10 @@
 <html ng-app="mozartApp" lang="en">
   <head>
     <meta charset="utf-8">
-    <title>mozart by payutc</title>
+    <title>mozart by PayIcam</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="author" content="payutc">
+    <meta name="author" content="PayIcam">
     <link href="css/loading.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
@@ -35,7 +35,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">mozart <small>by</small> <img src="img/payutc_rect_110.png" alt="payutc"></a>
+          <a class="navbar-brand" href="#">mozart <small>by</small>
+            <span style="postition:relative;"><img src="http://localhost/icam/payicam/admin_ginger/img/PayIcam-h30-white.png" alt="payutc" style="display:inline-block;position: relative;top:6px;"></span>
+          </a>
         </div>
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
           <form class="navbar-form navbar-right ng-cloak">
@@ -50,7 +52,7 @@
                 <h3>Enregistrement de l'application</h3>
               </div>
               <div class="modal-body">
-                <p>Cette application n'est pas enregistrée auprès de payutc.<br/>Remplissez ce formulaire puis autorisez l'application dans scoobydoo.</p>
+                <p>Cette application n'est pas enregistrée auprès de PayIcam.<br/>Remplissez ce formulaire puis autorisez l'application dans scoobydoo.</p>
                 <form novalidate class="form-horizontal" role="form">
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Titre</label>
@@ -116,7 +118,7 @@ border: 1px solid {{ state_bordercolor }};">
             <script type="text/ng-template" id="modalUser.html">
               <div class="modal-header">
                 <h3>Compte de {{ user.firstname }} {{ user.lastname }}</h3>
-                <p>Solde payutc : {{ formatPrix(user.solde) }}</p>
+                <p>Solde PayIcam : {{ formatPrix(user.solde) }}</p>
               </div>
               <div class="modal-body">
                 <table class="table table-striped" ng-if="user.last_purchases">
@@ -187,7 +189,7 @@ border: 1px solid {{ state_bordercolor }};">
         <p>L'erreur suivante s'est produite : <pre>{{ critError }}</pre></p>
         <p>
           Tu peux essayer de recharger la page ou de te connecter à nouveau.<br/>
-          Si le problème persiste, contacte un responsable ou l'équipe de payutc
+          Si le problème persiste, contacte un responsable ou l'équipe de PayIcam
         </p>
         <button class="btn btn-primary" ng-click="reload()">Recharger</button>
         <button class="btn btn-danger" ng-click="onLogoutClick()">Déconnexion</button>
