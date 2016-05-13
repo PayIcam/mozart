@@ -50,7 +50,7 @@ mozartApp.controller('StateCtrl', function($scope, $http, $modal, $timeout, mreq
             mrequest.do('POSS3', 'transaction', { fun_id: $scope.store.fun_id, badge_id: badge_id, obj_ids: $scope.cart.formatPoss3() } ).success( function(data){
                 var ticket = PrintFormatter.Ticket(data);
                 JCappucinoService.send("print", ticket);
-                $scope.state = 'Transaction réussi...';
+                $scope.state = 'Transaction réussie...';
                 $scope.state_bgcolor = "#00f500";
                 $scope.state_bordercolor = "#00e300";
                 resetColor(2000);
