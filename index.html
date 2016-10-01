@@ -88,7 +88,7 @@
                 <th>Prix</th>
               </tr>
             </thead>
-            <tbody id="lignes"> 
+            <tbody id="lignes">
               <tr ng-repeat="cartItem in cart.items">
                 <td>{{ cartItem.quantity }}</td>
                 <td>{{ cartItem.name }}</td>
@@ -120,6 +120,7 @@ border: 1px solid {{ state_bordercolor }};">
               <div class="modal-header">
                 <h3>Compte de {{ user.firstname }} {{ user.lastname }}</h3>
                 <p>Solde PayIcam : {{ formatPrix(user.solde) }}</p>
+                <p>Solde écocup : {{ user.credit_ecocup }}</p>
               </div>
               <div class="modal-body">
                 <table class="table table-striped" ng-if="user.last_purchases">
@@ -142,17 +143,17 @@ border: 1px solid {{ state_bordercolor }};">
             </script>
           </div>
         </div>
-      
+
         <div class="col-md-2 fill" id="tableau-categories">
           <button class="btn btn-default" ng-repeat="cat in store.first_cat" ng-click="store.catClick(cat.id)" ng-class="{'active': cat.id == store.cat_selected}" ng-attr-style="height: {{ categoryCount > 0 ? 100/categoryCount : 100 }}%">{{ cat.name }}</button>
         </div>
-      
+
         <div class="col-md-6 fill" id="tableau-articles">
           <button class="btn btn-default" ng-repeat="art in store.products" ng-click="artClick(art.id)" ng-hide="art.super_parent != store.cat_selected" ng-attr-style="{{ art.image && 'background-image: url('+server+'POSS3/getImage64?img_id='+art.image+'&encode=0&outw=300&outh=300);' }}">{{ !art.image && art.name || "" }}</button>
         </div>
       </div><!--/row-->
     </div> <!-- /container -->
-    
+
     <div class="modal hide fade" id="BuyerInfo">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">×</button>

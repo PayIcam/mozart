@@ -5,9 +5,9 @@ mozartApp.controller('StateCtrl', function($scope, $http, $modal, $timeout, mreq
     $scope.state_bordercolor = "#e3e3e3";
     $scope.cart = DataService.cart;
     $scope.store = DataService.store;
-    
+
     $scope.formatPrix = function(price) { return PrintFormatter.formatPrix(price/100); }
-      
+
     resetColor = function(t) {
         $timeout(function() {
             $scope.state = "Prêt";
@@ -70,6 +70,7 @@ mozartApp.controller('StateCtrl', function($scope, $http, $modal, $timeout, mreq
         }
         mrequest.do('POSS3', 'cancel', { fun_id: $scope.store.fun_id, pur_id: pur_id } ).success( function(data){
             $scope.user.solde = (1 * $scope.user.solde) + (1 * pur.pur_price);
+            $scope.user.credit_ecocup = 'rebadger svp';
             $scope.user.last_purchases.splice(i, 1);
         }).error(function(data) {
         });
