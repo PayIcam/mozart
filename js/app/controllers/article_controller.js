@@ -8,14 +8,14 @@ mozartApp.controller('ArticleCtrl',function($scope, $http, mrequest, localStorag
     $scope.cart.clearItems();
     $scope.$on("GET_ARTICLES",function(event,message){
         $scope.store.fun_id = message;
-        mrequest.do('POSS3','getCategories', {fun_id : [message]}).success(function(data){
+        mrequest.do('POSS3','getCategories', {params:{fun_id : [message], service:'Mozart'}}).success(function(data){
             for(var i=0; i<data.length; i++) {
                 $scope.store.addCategory(data[i]);
             }
             $scope.categoryCount = Object.keys($scope.store.first_cat).length;
-            
+
             // Get articles
-            mrequest.do('POSS3','getArticles', {fun_id : message}).success(function(data){
+            mrequest.do('POSS3','getArticles', {params:{fun_id : message, service:'Mozart'}}).success(function(data){
                 if(data == null) {
                     $scope.$emit("ERROR_GET_ARTICLES", "Aucun article à vendre!");
                  }
@@ -30,7 +30,7 @@ mozartApp.controller('ArticleCtrl',function($scope, $http, mrequest, localStorag
                     };
                  }
             });
-            
+
             // Select the first category
             for(idc in $scope.store.categories) {
               $scope.store.catClick($scope.store.categories[idc].id);
