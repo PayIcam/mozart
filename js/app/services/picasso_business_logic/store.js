@@ -21,8 +21,8 @@ store.prototype.getProductByName = function (name) {
     return null;
 }
 
-store.prototype.addProduct = function(id, name, categorie_id, fundation_id, price, stock, alcool, image) {
-    var myProduct = new product(id, name, categorie_id, fundation_id, price, stock, alcool, image);
+store.prototype.addProduct = function(id, name, categorie_id, fundation_id, price, stock, alcool, image, image_path) {
+    var myProduct = new product(id, name, categorie_id, fundation_id, price, stock, alcool, image, image_path);
     this.products[id] = myProduct;
     if(!this.products[id].super_parent) {
         this.products[id].super_parent = this.getParent(this.products[id].categorie_id);
@@ -45,5 +45,5 @@ store.prototype.getParent = function(catId) {
 }
 
 store.prototype.catClick = function(catId) {
-    this.cat_selected = catId;  
+    this.cat_selected = catId;
 }

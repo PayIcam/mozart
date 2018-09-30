@@ -147,9 +147,8 @@ border: 1px solid {{ state_bordercolor }};">
         <div class="col-md-2 fill" id="tableau-categories">
           <button class="btn btn-default" ng-repeat="cat in store.first_cat" ng-click="store.catClick(cat.id)" ng-class="{'active': cat.id == store.cat_selected}" ng-attr-style="height: {{ categoryCount > 0 ? 100/categoryCount : 100 }}%">{{ cat.name }}</button>
         </div>
-
         <div class="col-md-6 fill" id="tableau-articles">
-          <button class="btn btn-default" ng-repeat="art in store.products" ng-click="artClick(art.id)" ng-hide="art.super_parent != store.cat_selected" ng-attr-style="{{ art.image && 'background-image: url('+server+'POSS3/getImage64?img_id='+art.image+'&encode=0&outw=300&outh=300);' }}">{{ !art.image && art.name || "" }}</button>
+          <button class="btn btn-default" style="width:20%; height:20%; background-image: url('{{art.image_path}}')" ng-repeat="art in store.products" ng-click="artClick(art.id)" ng-hide="art.super_parent != store.cat_selected">{{!art.image && art.name || "" }}</button>
         </div>
       </div><!--/row-->
     </div> <!-- /container -->
