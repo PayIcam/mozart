@@ -32,7 +32,7 @@ mozartApp.controller('StateCtrl', function($scope, $http, $modal, $timeout, mreq
             $scope.state = 'Récupération des infos utilisateur...';
             $scope.badge_id = badge_id;
             // panel should display user info (solde) to fetch from server
-            mrequest.do('POSS3', 'getBuyerInfo', { badge_id: badge_id } ).success( function(data){
+            mrequest.do('POSS3', 'getBuyerInfo', {badge_id: badge_id, fun_id: $scope.store.fun_id} ).success( function(data){
                 $scope.user = data;
                 $scope.user.last_purchases.reverse();
                 $scope.modalInstance = $modal.open({

@@ -22,7 +22,6 @@ mozartApp.controller('ArticleCtrl',function($scope, $http, mrequest, localStorag
                  else{
                     // Add all items to the store
                     for (var i = data.length - 1; i >= 0; i--) {
-                        console.log(data[i]);
                         $scope.store.addProduct(data[i]['id'], data[i]['name'], data[i]['categorie_id'], data[i]['fundation_id'], data[i]['price'], data[i]['stock'], data[i]['alcool'], data[i]['image'], data[i]['image_path']);
                     };
                  }
