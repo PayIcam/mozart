@@ -129,6 +129,7 @@ border: 1px solid {{ state_bordercolor }};">
                 <h3>Compte de {{ user.firstname }} {{ user.lastname }}</h3>
                 <p>Solde PayIcam : {{ formatPrix(user.solde) }}</p>
                 <p>Solde écocup : {{ user.credit_ecocup }}</p>
+                <p>Solde écocup soirée : {{ user.credit_ecocup_soiree }}</p>
               </div>
               <div class="modal-body">
                 <table class="table table-striped" ng-if="user.last_purchases">

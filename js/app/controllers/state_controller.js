@@ -71,6 +71,7 @@ mozartApp.controller('StateCtrl', function($scope, $http, $modal, $timeout, mreq
         mrequest.do('POSS3', 'cancel', { fun_id: $scope.store.fun_id, pur_id: pur_id } ).success( function(data){
             $scope.user.solde = (1 * $scope.user.solde) + (1 * pur.pur_price);
             $scope.user.credit_ecocup = 'rebadger svp';
+            $scope.user.credit_ecocup_soiree = 'rebadger svp';
             $scope.user.last_purchases.splice(i, 1);
         }).error(function(data) {
         });
